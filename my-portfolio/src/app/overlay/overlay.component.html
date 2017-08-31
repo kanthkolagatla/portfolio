@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="page-header">
+      <div class="row">
+        <div >
+          <label  (click)="openMenu()">
+            <i class="fa fa-bars hamburger" aria-hidden="true"></i>
+
+          </label>
+        </div>
+        <h1 class="heading">Profile</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myNav" #menuTab class="overlay">
+  <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+  <div class="jumbotron back-c">
+    <div class="container">
+      <i *ngIf="menuFlag" (click)="closeMenu()" class="fa fa-times cross-mark" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="overlay-content" *ngFor="let path of menu">
+    <a href="" (click)="naviagationPath($event)">{{path.name}}</a>
+  </div>
+</div>
